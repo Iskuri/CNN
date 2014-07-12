@@ -43,7 +43,7 @@ void updateWeights(Neuron* neuron) {
 		
 		//printf("Updating weights with input val %f\n",neuron->inputs[i]);
 		//printf("Updating weights with errorSignal val %f\n",neuron->errorSignal);
-		neuron->weights[i] = neuron->weights[i] + 0.25 * neuron->errorSignal * derivative * neuron->inputs[i];
+		neuron->weights[i] = neuron->weights[i] + (0.25 * neuron->errorSignal * derivative * neuron->inputs[i]);
 		//printf("New weight value for %d: %f\n",i,neuron->weights[i]);
 	}
 }
@@ -58,7 +58,7 @@ double calculateOutput(Neuron* neuron) {
 		
 		//printf("Using input val: %f\n",neuron->inputs[i]);
 		//printf("Using weight val: %f\n",neuron->weights[i]);
-		neuron->output = neuron->inputs[i] * neuron->weights[i];
+		neuron->output += neuron->inputs[i] * neuron->weights[i];
 	}
 	
 	neuron->output = activationFunction(neuron->output);

@@ -68,7 +68,7 @@ void trainNetwork(NeuralNetwork* neuralNetwork, int outPos, double outVal) {
 
 	//allNeurons[allNeurons.length-1][index].errorSignal = value
 	neuralNetwork->neurons[neuralNetwork->networkSize-1][outPos].errorSignal = outVal - currentOut;
-	printf("%f = %f - %f\n",neuralNetwork->neurons[neuralNetwork->networkSize-1][outPos].errorSignal,outVal,currentOut);
+	//printf("%f = %f - %f\n",neuralNetwork->neurons[neuralNetwork->networkSize-1][outPos].errorSignal,outVal,currentOut);
 	int i;
 	int j;
 	int k;
