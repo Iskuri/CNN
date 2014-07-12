@@ -19,7 +19,8 @@ int main(int argc, char** argv) {
 	
 	int i = 0;
 
-	int neuronStructure[] = {3,3,3,3,1};
+	
+	int neuronStructure[] = {3,5,5,5,1};
 //	int neuronStructure[] = {2,3,1};
 
 	NeuralNetwork neuralNetwork = generateNetwork(neuronStructure,5);
@@ -52,7 +53,7 @@ int main(int argc, char** argv) {
 //
 		setInput(&neuralNetwork,0,0);
 		setInput(&neuralNetwork,1,0);
-		trainNetwork(&neuralNetwork,0,0.1);
+		trainNetwork(&neuralNetwork,0,0.6);
 		printf(format,getOutput(&neuralNetwork,0));
 		
 		printf("\n");
