@@ -19,14 +19,14 @@ int main(int argc, char** argv) {
 	
 	int i = 0;
 
-	int neuronStructure[] = {3,3,3,1};
+	int neuronStructure[] = {3,3,3,3,1};
 //	int neuronStructure[] = {2,3,1};
 
-	NeuralNetwork neuralNetwork = generateNetwork(neuronStructure,4);
+	NeuralNetwork neuralNetwork = generateNetwork(neuronStructure,5);
 
 	//printf("Output before runnning %f\n",neuralNetwork.neurons[0][0].output);
 	
-	char* format = "%f ";
+	char* format = "%.2f ";
 	
 	while(1) {
 //	for (i = 0 ; i < 10 ; i++) {
@@ -37,22 +37,22 @@ int main(int argc, char** argv) {
 
 		setInput(&neuralNetwork,0,1);
 		setInput(&neuralNetwork,1,0);
-		trainNetwork(&neuralNetwork,0,1);
+		trainNetwork(&neuralNetwork,0,0.9);
 		printf(format,getOutput(&neuralNetwork,0));
 
 		setInput(&neuralNetwork,0,1);
 		setInput(&neuralNetwork,1,1);
-		trainNetwork(&neuralNetwork,0,0);
+		trainNetwork(&neuralNetwork,0,0.1);
 		printf(format,getOutput(&neuralNetwork,0));
 //
 		setInput(&neuralNetwork,0,0);
 		setInput(&neuralNetwork,1,1);
-		trainNetwork(&neuralNetwork,0,1);
+		trainNetwork(&neuralNetwork,0,0.9);
 		printf(format,getOutput(&neuralNetwork,0));
 //
 		setInput(&neuralNetwork,0,0);
 		setInput(&neuralNetwork,1,0);
-		trainNetwork(&neuralNetwork,0,0);
+		trainNetwork(&neuralNetwork,0,0.1);
 		printf(format,getOutput(&neuralNetwork,0));
 		
 		printf("\n");
