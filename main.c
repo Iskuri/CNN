@@ -53,7 +53,7 @@ int main(int argc, char** argv) {
 //
 		setInput(&neuralNetwork,0,0);
 		setInput(&neuralNetwork,1,0);
-		trainNetwork(&neuralNetwork,0,0.6);
+		trainNetwork(&neuralNetwork,0,0.1);
 		printf(format,getOutput(&neuralNetwork,0));
 		
 		printf("\n");

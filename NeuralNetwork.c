@@ -111,10 +111,10 @@ NeuralNetwork generateNetwork(int* neuronStructure, int structureSize) {
 	//generatedNetwork.neurons = Neuron[structureSize];
 	
 	// allocating memory for neurons
-	Neuron** neurons = (Neuron** ) malloc(20 * sizeof(Neuron*));
+	Neuron** neurons = (Neuron** ) malloc(structureSize * sizeof(Neuron*));
 	
-	for(i = 0 ; i < 20 ; i++) {
-		neurons[i] = (Neuron*)malloc(20 * sizeof(Neuron));
+	for(i = 0 ; i < structureSize ; i++) {
+		neurons[i] = (Neuron*)malloc(neuronStructure[i] * sizeof(Neuron));
 	}
 
 	//printf("Neuron structure size %d\n",structureSize);
